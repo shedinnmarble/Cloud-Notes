@@ -8,7 +8,8 @@ import { HttpModule } from "@angular/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { NoteDetailComponent } from "./note-detail.component"
 import { AddNoteComponent } from "./add-note.component";
-
+import {LoginComponent} from "./login.component"
+import {LoginService} from './login.service'
 @NgModule({
   imports: [
     BrowserModule,
@@ -21,9 +22,10 @@ import { AddNoteComponent } from "./add-note.component";
     AppComponent,
     NoteComponent,
     NoteDetailComponent,
-    AddNoteComponent
+    AddNoteComponent,
+    LoginComponent
   ],
-  providers: [NoteService],
+  providers: [NoteService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

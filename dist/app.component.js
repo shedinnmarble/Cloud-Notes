@@ -9,17 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var login_service_1 = require('./login.service');
+var router_1 = require('@angular/router');
+var common_1 = require('@angular/common');
 var AppComponent = (function () {
-    function AppComponent() {
-        this.submitted = false;
+    function AppComponent(loginService, route, location) {
+        this.loginService = loginService;
+        this.route = route;
+        this.location = location;
     }
-    AppComponent.prototype.onSubmit = function () { this.submitted = true; };
+    AppComponent.prototype.ngOnInit = function () {
+        this.loginService.isLogin().then(function (data) {
+            console.log(data);
+            if (data) {
+                console.log(" login");
+            }
+            else {
+                console.log("no login");
+            }
+        });
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [login_service_1.LoginService, router_1.Router, common_1.Location])
     ], AppComponent);
     return AppComponent;
 }());

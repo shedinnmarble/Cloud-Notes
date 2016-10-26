@@ -1,0 +1,16 @@
+<form >
+    <div class="form-group">
+        <label for="noteName">Note Name</label>
+        <input type="text" class="form-control" id="noteName" placeholder="Note Name" name="name" #noteName  />
+    </div>
+    <div class="form-group">
+        <label for="noteAuthor">Author</label>
+        <input type="text" class="form-control" id="noteAuthor" placeholder="author" name="author" #noteAuthor />
+    </div>
+    <div class="form-group">
+        <label for="noteContent">Note Name</label>
+
+        <textarea class="form-control" id="noteContent" placeholder="Note Content" name="content" #noteContent></textarea>
+    </div>
+    <button type="button" class="btn btn-default" (click)="addNote(noteName.value,noteAuthor.value,noteContent.value);">Submit</button>
+</form>

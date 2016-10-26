@@ -6,6 +6,7 @@ import {AddNoteComponent} from "./add-note.component";
 import {AppComponent} from "./app.component";
 import {NoteComponent} from "./notes.component";
 import {NoteDetailComponent} from "./note-detail.component"
+import {LoginComponent} from "./login.component"
 const routes: Routes =[
     {
         path: 'add',
@@ -15,6 +16,9 @@ const routes: Routes =[
         path:'home',
         component:NoteComponent
 
+    },{
+        path:'login',
+        component:LoginComponent
     },{
         path:'',
         redirectTo:'/home',

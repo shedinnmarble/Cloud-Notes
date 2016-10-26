@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var add_note_component_1 = require("./add-note.component");
 var notes_component_1 = require("./notes.component");
 var note_detail_component_1 = require("./note-detail.component");
+var login_component_1 = require("./login.component");
 var routes = [
     {
         path: 'add',
@@ -21,6 +22,9 @@ var routes = [
     {
         path: 'home',
         component: notes_component_1.NoteComponent
+    }, {
+        path: 'login',
+        component: login_component_1.LoginComponent
     }, {
         path: '',
         redirectTo: '/home',

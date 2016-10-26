@@ -15,7 +15,7 @@ var Note = mongoose.model('Note', noteSchema);
 
 /* GET home page. */
 router.get('/note', function (req, res, next) {
-
+    console.log(req.session);
     var dewei = new Note({
         title: "first note",
         author: 'dewei',

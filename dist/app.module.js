@@ -18,6 +18,8 @@ var http_1 = require("@angular/http");
 var app_routing_module_1 = require("./app-routing.module");
 var note_detail_component_1 = require("./note-detail.component");
 var add_note_component_1 = require("./add-note.component");
+var login_component_1 = require("./login.component");
+var login_service_1 = require('./login.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,9 +35,10 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 notes_component_1.NoteComponent,
                 note_detail_component_1.NoteDetailComponent,
-                add_note_component_1.AddNoteComponent
+                add_note_component_1.AddNoteComponent,
+                login_component_1.LoginComponent
             ],
-            providers: [notes_service_1.NoteService],
+            providers: [notes_service_1.NoteService, login_service_1.LoginService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
