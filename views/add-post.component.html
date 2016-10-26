@@ -1,0 +1,16 @@
+<form >
+    <div class="form-group">
+        <label for="postName">Post Name</label>
+        <input type="text" class="form-control" id="postName" placeholder="Post Name" name="postName" #postName  >
+    </div>
+    <div class="form-group">
+        <label for="postAuthor">Author</label>
+        <input type="text" class="form-control" id="postAuthor" placeholder="Author" [(ngModel)]="module.author">
+    </div>
+    <div class="form-group">
+        <label for="postContent">Post Content</label>
+
+        <textarea class="form-control" id="postContent" placeholder="Post Content" name="postContent" [(ngModel)]="module.content"></textarea>
+    </div>
+    <button type="button" class="btn btn-default" (click)="add(module)" )>Submit</button>
+</form>
