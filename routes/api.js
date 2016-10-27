@@ -78,4 +78,16 @@ router.put("/note/:id", function (req, res) {
         res.send(data);
     })
 })
+router.delete("/note/:id", function (req, res) {
+    const id=req.params.id;
+    Note.remove({"_id":id},function(err,data){
+        if(err){
+            console.log(err);
+            res.send("false")
+        }else{
+            console.log(data)
+            res.send("true")
+        }
+    })
+})
 module.exports = router;

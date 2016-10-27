@@ -46,6 +46,10 @@ var NoteService = (function () {
             .then(function () { return note; })
             .catch(this.handleError);
     };
+    NoteService.prototype.delete = function (note) {
+        var url = this.noteUrl + "/" + note._id;
+        this.http.delete(url).toPromise().then(function () { return note; }).catch(this.handleError);
+    };
     NoteService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);

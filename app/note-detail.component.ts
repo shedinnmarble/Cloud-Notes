@@ -22,6 +22,10 @@ export class NoteDetailComponent implements OnInit {
         this.noteService.update(this.note)
             .then(() => this.goBack());
     }
+    delete():void{
+        this.noteService.delete(this.note)
+        //this.goBack();
+    }
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
             let id = params['id'];

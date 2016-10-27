@@ -25,6 +25,10 @@ var NoteDetailComponent = (function () {
         this.noteService.update(this.note)
             .then(function () { return _this.goBack(); });
     };
+    NoteDetailComponent.prototype.delete = function () {
+        this.noteService.delete(this.note);
+        //this.goBack();
+    };
     NoteDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {

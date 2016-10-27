@@ -31,7 +31,7 @@ export class NoteService {
     getNote(id: string): Promise<Note> {
         return this.getNotes().then(notes => notes.find(note => note._id === id));
     }
-      update(note: Note): Promise<Note> {
+    update(note: Note): Promise<Note> {
         const url = `${this.noteUrl}/${note._id}`;
         console.log(url);
         return this.http
@@ -39,6 +39,10 @@ export class NoteService {
             .toPromise()
             .then(() => note)
             .catch(this.handleError);
+    }
+    delete(note:Note):void{
+        const url = `${this.noteUrl}/${note._id}`;
+        this.http.delete(url).toPromise().then(()=>note).catch(this.handleError);
     }
 
     private handleError(error: any): Promise<any> {
