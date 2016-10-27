@@ -29,7 +29,8 @@ export class AddNoteComponent  {
 
     addNote(name: string,author:string,content:string):void{
         console.log(name+"note");
-        this.noteService.add(name,author,content);    
+        this.noteService.add(name,author,content); 
+           window.location.href = "/home"
     }
 
 

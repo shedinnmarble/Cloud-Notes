@@ -12,7 +12,7 @@ var noteSchema = new mongoose.Schema({
     lastModifyDate: Date
 })
 var Note = mongoose.model('Note', noteSchema);
-
+ 
 /* GET home page. */
 router.get('/note', function (req, res, next) {
     console.log(req.session);
@@ -32,6 +32,13 @@ router.get('/note', function (req, res, next) {
     })
 
 });
+router.get('/note/:title',function(req,res){
+    const title=req.params.title;
+    Note.find({'title':title},function (err, data) {
+        if(err) res.send(err);
+        else res.send(data);
+    })
+})
 router.post("/note", function (req, res) {
     // console.log(req.body)
     var note = new Note({

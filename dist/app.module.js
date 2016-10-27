@@ -20,6 +20,7 @@ var note_detail_component_1 = require("./note-detail.component");
 var add_note_component_1 = require("./add-note.component");
 var login_component_1 = require("./login.component");
 var login_service_1 = require('./login.service');
+var note_search_component_1 = require('./note-search.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +37,8 @@ var AppModule = (function () {
                 notes_component_1.NoteComponent,
                 note_detail_component_1.NoteDetailComponent,
                 add_note_component_1.AddNoteComponent,
-                login_component_1.LoginComponent
+                login_component_1.LoginComponent,
+                note_search_component_1.NoteSearchComponent
             ],
             providers: [notes_service_1.NoteService, login_service_1.LoginService],
             bootstrap: [app_component_1.AppComponent]

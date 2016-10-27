@@ -4,7 +4,8 @@ import {Note} from "./note";
 
 @Component({
     selector: 'notes',
-    templateUrl:'note.component.html'
+    templateUrl:'note.component.html',
+    styleUrls:["note.component.css"]
 })
 export class NoteComponent implements OnInit {
     notes:Note[];

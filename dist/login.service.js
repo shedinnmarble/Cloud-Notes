@@ -13,10 +13,17 @@ var http_1 = require('@angular/http');
 var LoginService = (function () {
     function LoginService(http) {
         this.http = http;
+        this.api = "/users";
     }
     LoginService.prototype.isLogin = function () {
-        var api = "/users";
-        return this.http.get(api).toPromise().then(function (response) { return response.text() == 'true'; }).catch(this.handleError);
+        return this.http.get(this.api).toPromise().then(function (response) { return JSON.parse(response.text()); }).catch(this.handleError);
+    };
+    LoginService.prototype.login = function (email, pwd) {
+        return this.http
+            .post(this.api, { email: email, pwd: pwd })
+            .toPromise()
+            .then(function (response) { return JSON.parse(response.text()); })
+            .catch(this.handleError);
     };
     LoginService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only

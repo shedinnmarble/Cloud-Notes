@@ -10,6 +10,7 @@ import { NoteDetailComponent } from "./note-detail.component"
 import { AddNoteComponent } from "./add-note.component";
 import {LoginComponent} from "./login.component"
 import {LoginService} from './login.service'
+ import{NoteSearchComponent} from './note-search.component'
 @NgModule({
   imports: [
     BrowserModule,
@@ -19,11 +20,15 @@ import {LoginService} from './login.service'
 
   ],
   declarations: [
-    AppComponent,
+    AppComponent
+    ,
     NoteComponent,
     NoteDetailComponent,
     AddNoteComponent,
     LoginComponent
+    ,
+    NoteSearchComponent
+      
   ],
   providers: [NoteService,LoginService],
   bootstrap: [AppComponent]

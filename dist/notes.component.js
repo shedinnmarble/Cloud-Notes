@@ -28,7 +28,8 @@ var NoteComponent = (function () {
     NoteComponent = __decorate([
         core_1.Component({
             selector: 'notes',
-            templateUrl: 'note.component.html'
+            templateUrl: 'note.component.html',
+            styleUrls: ["note.component.css"]
         }), 
         __metadata('design:paramtypes', [notes_service_1.NoteService])
     ], NoteComponent);

@@ -18,6 +18,7 @@ var AddNoteComponent = (function () {
     AddNoteComponent.prototype.addNote = function (name, author, content) {
         console.log(name + "note");
         this.noteService.add(name, author, content);
+        window.location.href = "/home";
     };
     __decorate([
         core_1.Input(), 
